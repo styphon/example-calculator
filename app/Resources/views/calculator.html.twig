@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Example Calculator Application{% endblock %}
+
+{% block body %}
+    <header class="jumbotron">
+        <div class="container text-center">
+            <h1>Calculator</h1>
+        </div>
+    </header>
+
+    <form action="{{ url("calculator") }}" method="post" class="calculator container">
+        <input type="text" name="doCalculation" id="result" class="form-control" value="{{ result }}" readonly>
+        <div class="buttons">
+            <section class="row">
+                <button type="button" class="btn double-width" id="btn-clear">CLR</button>
+                <button type="button" class="btn double-width" id="btn-delete">DEL</button>
+            </section>
+        </div>
+        <div class="buttons">
+            <section class="row">
+                <button type="button" class="btn" id="btn-divide">&divide;</button>
+                <button type="button" class="btn" id="btn-multiply">&times;</button>
+                <button type="button" class="btn" id="btn-add">+</button>
+                <button type="button" class="btn" id="btn-subtract">-</button>
+            </section>
+        </div>
+        <div class="buttons">
+            <div class="calc-left">
+                <section class="row">
+                    <button type="button" class="btn" id="btn-7">7</button>
+                    <button type="button" class="btn" id="btn-8">8</button>
+                    <button type="button" class="btn" id="btn-9">9</button>
+                </section>
+                <section class="row">
+                    <button type="button" class="btn" id="btn-4">4</button>
+                    <button type="button" class="btn" id="btn-5">5</button>
+                    <button type="button" class="btn" id="btn-6">6</button>
+                </section>
+                <section class="row">
+                    <button type="button" class="btn" id="btn-1">1</button>
+                    <button type="button" class="btn" id="btn-2">2</button>
+                    <button type="button" class="btn" id="btn-3">3</button>
+                </section>
+                <section class="row">
+                    <button type="button" class="btn double-width" id="btn-0">0</button>
+                    <button type="button" class="btn" id="btn-dot">.</button>
+                </section>
+            </div>
+            <div class="calc-right">
+                <button type="submit" class="btn" id="btn-enter">Enter</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/bundles/calculator.css">
+{% endblock %}
